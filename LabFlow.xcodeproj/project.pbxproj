@@ -48,11 +48,36 @@
 			);
 			target = 9A296A8E2FADC299001925B4 /* LabFlow */;
 		};
+		9A5CE4502FAE100000A45D01 /* Exceptions for "LabFlow" folder in "LabFlow" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Features/ConsultationTickets/Components/.gitkeep,
+				Features/ConsultationTickets/ViewModels/.gitkeep,
+				Features/ConsultationTickets/Views/.gitkeep,
+				Features/Home/ViewModels/.gitkeep,
+				Features/ResearchLogs/Components/.gitkeep,
+				Features/ResearchLogs/ViewModels/.gitkeep,
+				Features/ResearchLogs/Views/.gitkeep,
+				Features/Tasks/Components/.gitkeep,
+				Features/Tasks/ViewModels/.gitkeep,
+				Features/Tasks/Views/.gitkeep,
+				Models/.gitkeep,
+				Repositories/.gitkeep,
+				Resources/.gitkeep,
+				Shared/Components/.gitkeep,
+				Shared/Extensions/.gitkeep,
+				Shared/Utilities/.gitkeep,
+			);
+			target = 9A296A8E2FADC299001925B4 /* LabFlow */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		9A296A912FADC299001925B4 /* LabFlow */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				9A5CE4502FAE100000A45D01 /* Exceptions for "LabFlow" folder in "LabFlow" target */,
+			);
 			path = LabFlow;
 			sourceTree = "<group>";
 		};
