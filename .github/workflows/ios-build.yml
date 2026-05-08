@@ -31,15 +31,10 @@ jobs:
         run: |
           xcodebuild -list
 
-      - name: Create iOS Simulator
-        run: |
-          xcrun simctl create "iPhone 16" "iPhone 16" com.apple.CoreSimulator.SimRuntime.iOS-18-2
-          xcrun simctl list devices | grep "iPhone 16"
-
       - name: Build app
         run: |
           xcodebuild \
             -scheme LabFlow \
-            -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.2' \
+            -destination 'platform=iOS Simulator,name=iPhone 16,OS=latest' \
             clean build \
             CODE_SIGNING_ALLOWED=NO
