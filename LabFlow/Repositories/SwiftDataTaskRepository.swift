@@ -1,6 +1,7 @@
 import Foundation
 import SwiftData
 
+@MainActor
 final class SwiftDataTaskRepository: TaskRepository {
     private let modelContext: ModelContext
 

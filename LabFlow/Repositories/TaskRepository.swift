@@ -1,5 +1,6 @@
 import Foundation
 
+@MainActor
 protocol TaskRepository {
     func fetchTasks() async throws -> [TaskItem]
     func createTask(_ task: TaskItem) async throws
