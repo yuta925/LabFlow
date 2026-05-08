@@ -34,7 +34,6 @@
 		9A296A9E2FADC29B001925B4 /* LabFlowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LabFlowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A296AA82FADC29B001925B4 /* LabFlowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LabFlowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A5CE3632FADC59500A45D00 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		9A5CE3672FADC59500A45D00 /* LabFlow.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = LabFlow.xcodeproj; sourceTree = "<group>"; };
 		9A5CE37A2FADC73500A45D00 /* CLAUDE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CLAUDE.md; sourceTree = "<group>"; };
 		9A5CE37C2FADC74600A45D00 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -120,11 +119,6 @@
 				9A296A9E2FADC29B001925B4 /* LabFlowTests.xctest */,
 				9A296AA82FADC29B001925B4 /* LabFlowUITests.xctest */,
 			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		9A5CE3692FADC59500A45D00 /* Products */ = {
-			isa = PBXGroup;
 			name = Products;
 			sourceTree = "<group>";
 		};
@@ -237,12 +231,6 @@
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 9A296A902FADC299001925B4 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 9A5CE3692FADC59500A45D00 /* Products */;
-					ProjectRef = 9A5CE3672FADC59500A45D00 /* LabFlow.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				9A296A8E2FADC299001925B4 /* LabFlow */,
