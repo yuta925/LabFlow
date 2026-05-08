@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9A5CE36F2FADC59500A45D00 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 9A5CE3632FADC59500A45D00 /* .gitignore */; };
+		9A5CE37B2FADC73500A45D00 /* CLAUDE.md in Resources */ = {isa = PBXBuildFile; fileRef = 9A5CE37A2FADC73500A45D00 /* CLAUDE.md */; };
+		9A5CE37D2FADC74E00A45D00 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 9A5CE37C2FADC74600A45D00 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +35,8 @@
 		9A296AA82FADC29B001925B4 /* LabFlowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LabFlowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A5CE3632FADC59500A45D00 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		9A5CE3672FADC59500A45D00 /* LabFlow.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = LabFlow.xcodeproj; sourceTree = "<group>"; };
+		9A5CE37A2FADC73500A45D00 /* CLAUDE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CLAUDE.md; sourceTree = "<group>"; };
+		9A5CE37C2FADC74600A45D00 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -54,6 +58,16 @@
 		9A5CE3782FADC5A800A45D00 /* .claude */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = .claude;
+			sourceTree = "<group>";
+		};
+		9A5CE37E2FADC75C00A45D00 /* .github */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = .github;
+			sourceTree = "<group>";
+		};
+		9A5CE3832FADCA1000A45D00 /* docs */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = docs;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -86,6 +100,10 @@
 		9A296A862FADC299001925B4 = {
 			isa = PBXGroup;
 			children = (
+				9A5CE37E2FADC75C00A45D00 /* .github */,
+				9A5CE37A2FADC73500A45D00 /* CLAUDE.md */,
+				9A5CE37C2FADC74600A45D00 /* README.md */,
+				9A5CE3832FADCA1000A45D00 /* docs */,
 				9A296A912FADC299001925B4 /* LabFlow */,
 				9A296AA12FADC29B001925B4 /* LabFlowTests */,
 				9A296AAB2FADC29B001925B4 /* LabFlowUITests */,
@@ -128,6 +146,8 @@
 			fileSystemSynchronizedGroups = (
 				9A296A912FADC299001925B4 /* LabFlow */,
 				9A5CE3782FADC5A800A45D00 /* .claude */,
+				9A5CE37E2FADC75C00A45D00 /* .github */,
+				9A5CE3832FADCA1000A45D00 /* docs */,
 			);
 			name = LabFlow;
 			packageProductDependencies = (
@@ -238,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A5CE36F2FADC59500A45D00 /* .gitignore in Resources */,
+				9A5CE37B2FADC73500A45D00 /* CLAUDE.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A5CE37D2FADC74E00A45D00 /* README.md in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
