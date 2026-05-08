@@ -1,6 +1,7 @@
 import Foundation
 
 @Observable
+@MainActor
 final class TaskListViewModel {
     var tasks: [TaskItem] = []
     var isLoading = false

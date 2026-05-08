@@ -41,8 +41,12 @@ struct TaskListView: View {
             ProgressView()
         } else if viewModel.tasks.isEmpty {
             emptyState
-        } else {
-            List(viewModel.tasks, id: \.id) { task in
+        } else if let errorMessage =  viewModel.errorMessage {
+            ContentUnavailableView("エラーが発生しました", systemImage: "exclamationmark.triangle",
+                                   description:Text(errorMessage))
+        }
+        else {
+            List(viewModel.tasks) { task in
                 TaskRowView(task: task)
             }
         }
