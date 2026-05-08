@@ -17,7 +17,7 @@ enum TaskStatus: String, Codable, CaseIterable {
 
 @Model
 final class TaskItem {
-    var id: UUID
+    @Attribute(.unique) var id: UUID
     var title: String
     var memo: String
     var status: TaskStatus
