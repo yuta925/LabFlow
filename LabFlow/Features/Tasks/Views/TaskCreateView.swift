@@ -26,6 +26,7 @@ struct TaskCreateView: View {
                         Button("保存") {
                             Task {
                                 do {
+                                    viewModel.errorMessage = nil
                                     try await viewModel.createTask()
                                     dismiss()
                                 } catch {
@@ -34,6 +35,21 @@ struct TaskCreateView: View {
                             }
                         }
                         .disabled(!viewModel.isValid || viewModel.isLoading)
+                        if viewModel.isLoading {
+                            ProgressView().controlSize(.small)
+                        } else {
+                            Button("保存") {
+                                Task {
+                                    do {
+                                        viewModel.errorMessage = nil
+                                        try await viewModel.createTask()
+                                        dismiss()
+                                    } catch {
+                                        viewModel.errorMessage = error.localizedDescription
+                                    }
+                                }
+                            }.disabled(!viewModel.isValid)
+                        }
                     }
                 }
             }
