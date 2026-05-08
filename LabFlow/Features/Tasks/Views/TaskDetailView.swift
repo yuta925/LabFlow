@@ -32,7 +32,8 @@ struct TaskDetailView: View {
             Button("削除", role: .destructive) {
                 Task {
                     do {
-                        try await viewModel?.deleteTask()
+                        guard let viewModel else { return }
+                        try await viewModel.deleteTask()
                         dismiss()
                     } catch {
                         viewModel?.errorMessage = error.localizedDescription
@@ -65,13 +66,13 @@ struct TaskDetailView: View {
                 .pickerStyle(.segmented)
             }
 
-            if !task.memo.isEmpty {
+            if !viewModel.task.memo.isEmpty {
                 Section("メモ") {
-                    Text(task.memo)
+                    Text(viewModel.task.memo)
                 }
             }
 
-            if let dueDate = task.dueDate {
+            if let dueDate = viewModel.task.dueDate {
                 Section("期限日") {
                     Text(dueDate, style: .date)
                 }

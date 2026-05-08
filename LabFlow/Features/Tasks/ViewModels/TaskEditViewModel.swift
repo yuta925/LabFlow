@@ -31,10 +31,25 @@ final class TaskEditViewModel {
     func save() async throws {
         isLoading = true
         defer { isLoading = false }
+
+        let originalTitle = task.title
+        let originalMemo = task.memo
+        let originalStatus = task.status
+        let originalDueDate = task.dueDate
+
         task.title = title.trimmingCharacters(in: .whitespaces)
         task.memo = memo
         task.status = status
         task.dueDate = hasDueDate ? dueDate : nil
-        try await repository.updateTask(task)
+
+        do {
+            try await repository.updateTask(task)
+        } catch {
+            task.title = originalTitle
+            task.memo = originalMemo
+            task.status = originalStatus
+            task.dueDate = originalDueDate
+            throw error
+        }
     }
 }
