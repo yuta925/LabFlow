@@ -53,7 +53,14 @@ struct TaskListView: View {
         }
         else {
             List(viewModel.tasks) { task in
-                TaskRowView(task: task)
+                NavigationLink {
+                    TaskDetailView(task: task)
+                } label: {
+                    TaskRowView(task: task)
+                }
+            }
+            .onAppear {
+                Task { await viewModel.loadTasks() }
             }
         }
     }
