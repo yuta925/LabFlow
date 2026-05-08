@@ -4,6 +4,7 @@ import SwiftData
 struct TaskListView: View {
     @Environment(\.modelContext) private var modelContext
     @State private var viewModel: TaskListViewModel?
+    @State private var isShowingCreate = false
 
     var body: some View {
         NavigationStack {
@@ -18,11 +19,16 @@ struct TaskListView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
-                        // #10 で作成画面への遷移を実装
+                        isShowingCreate = true
                     } label: {
                         Image(systemName: "plus")
                     }
                 }
+            }
+            .sheet(isPresented: $isShowingCreate) {
+                Task { await viewModel?.loadTasks() }
+            } content: {
+                TaskCreateView()
             }
         }
         .task {
