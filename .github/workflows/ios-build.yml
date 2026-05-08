@@ -35,6 +35,6 @@ jobs:
         run: |
           xcodebuild \
             -scheme LabFlow \
-            -destination 'platform=iOS Simulator,name=iPhone 15,OS=latest' \
+            -destination 'platform=iOS Simulator,name=iPhone 17,OS=latest' \
             clean build \
             CODE_SIGNING_ALLOWED=NO
