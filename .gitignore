@@ -1,0 +1,13 @@
+# Xcode user-specific data
+xcuserdata/
+*.xcuserstate
+*.xccheckout
+*.moved-aside
+
+# Build artifacts
+DerivedData/
+.build/
+*.ipa
+
+# macOS
+.DS_Store
