@@ -28,7 +28,7 @@ struct ResearchLogListView: View {
             .sheet(isPresented: $isShowingCreate) {
                 Task { await viewModel?.loadLogs() }
             } content: {
-                Text("研究ログ作成画面（#22で実装）")
+                ResearchLogCreateView()
             }
         }
         .task {
