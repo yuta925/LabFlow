@@ -53,8 +53,7 @@ struct ResearchLogListView: View {
         } else {
             List(viewModel.logs) { log in
                 NavigationLink {
-                    Text("研究ログ詳細画面（#23で実装）")
-                        .navigationTitle(log.title)
+                    ResearchLogDetailView(log: log)
                 } label: {
                     ResearchLogRowView(log: log)
                 }
