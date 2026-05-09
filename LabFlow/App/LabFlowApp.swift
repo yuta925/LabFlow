@@ -4,7 +4,7 @@ import SwiftData
 @main
 struct LabFlowApp: App {
     let modelContainer: ModelContainer = {
-        let schema = Schema([TaskItem.self])
+        let schema = Schema([TaskItem.self, ResearchLog.self])
         do {
             return try ModelContainer(for: schema)
         } catch {
