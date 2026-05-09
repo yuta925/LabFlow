@@ -26,7 +26,7 @@ struct ResearchLogDetailView: View {
             }
         }
         .sheet(isPresented: $isShowingEdit) {
-            Text("研究ログ編集画面（#24で実装）")
+            ResearchLogEditView(log: log)
         }
         .alert("研究ログを削除しますか？", isPresented: $isShowingDeleteAlert) {
             Button("削除", role: .destructive) {
