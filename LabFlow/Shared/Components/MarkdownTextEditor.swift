@@ -47,7 +47,7 @@ struct MarkdownTextEditor: UIViewRepresentable {
         let bold = UIBarButtonItem(title: "B", style: .plain, target: coordinator, action: #selector(Coordinator.insertBold))
         let italic = UIBarButtonItem(title: "I", style: .plain, target: coordinator, action: #selector(Coordinator.insertItalic))
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let done = UIBarButtonItem(title: "完了", style: .done, target: coordinator, action: #selector(Coordinator.dismissKeyboard))
+        let done = UIBarButtonItem(title: "完了", style: .prominent, target: coordinator, action: #selector(Coordinator.dismissKeyboard))
 
         bold.setTitleTextAttributes([.font: UIFont.boldSystemFont(ofSize: 16)], for: .normal)
         italic.setTitleTextAttributes([.font: UIFont.italicSystemFont(ofSize: 16)], for: .normal)
