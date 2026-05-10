@@ -53,50 +53,29 @@ struct ResearchLogDetailView: View {
 
     @ViewBuilder
     private func content(viewModel: ResearchLogDetailViewModel) -> some View {
-        Form {
-            if !viewModel.log.did.isEmpty {
-                Section("今日やったこと") {
-                    Text(viewModel.log.did)
-                }
-            }
+        ScrollView {
+            VStack(alignment: .leading, spacing: 16) {
+                Text(viewModel.log.createdAt, style: .date)
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
 
-            if !viewModel.log.learned.isEmpty {
-                Section("学んだこと") {
-                    Text(viewModel.log.learned)
-                }
-            }
+                MarkdownViewer(content: viewModel.log.content)
 
-            if !viewModel.log.blocked.isEmpty {
-                Section("詰まっていること") {
-                    Text(viewModel.log.blocked)
-                }
-            }
+                Divider()
 
-            if !viewModel.log.nextAction.isEmpty {
-                Section("次にやること") {
-                    Text(viewModel.log.nextAction)
-                }
-            }
-
-            if !viewModel.log.question.isEmpty {
-                Section("質問・相談したいこと") {
-                    Text(viewModel.log.question)
-                }
-            }
-
-            Section {
                 Button("研究ログを削除", role: .destructive) {
                     isShowingDeleteAlert = true
                 }
-            }
+                .frame(maxWidth: .infinity, alignment: .center)
+                .padding(.vertical, 4)
 
-            if let errorMessage = viewModel.errorMessage {
-                Section {
+                if let errorMessage = viewModel.errorMessage {
                     Text(errorMessage)
                         .foregroundStyle(.red)
                         .font(.caption)
                 }
             }
+            .padding()
         }
     }
 }

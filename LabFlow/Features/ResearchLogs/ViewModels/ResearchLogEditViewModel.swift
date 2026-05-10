@@ -4,11 +4,7 @@ import Foundation
 @MainActor
 final class ResearchLogEditViewModel {
     var title: String
-    var did: String
-    var learned: String
-    var blocked: String
-    var nextAction: String
-    var question: String
+    var content: String
     var isLoading = false
     var errorMessage: String?
 
@@ -23,11 +19,7 @@ final class ResearchLogEditViewModel {
         self.log = log
         self.repository = repository
         title = log.title
-        did = log.did
-        learned = log.learned
-        blocked = log.blocked
-        nextAction = log.nextAction
-        question = log.question
+        content = log.content
     }
 
     func save() async throws {
@@ -35,28 +27,16 @@ final class ResearchLogEditViewModel {
         defer { isLoading = false }
 
         let originalTitle = log.title
-        let originalDid = log.did
-        let originalLearned = log.learned
-        let originalBlocked = log.blocked
-        let originalNextAction = log.nextAction
-        let originalQuestion = log.question
+        let originalContent = log.content
 
         log.title = title.trimmingCharacters(in: .whitespaces)
-        log.did = did
-        log.learned = learned
-        log.blocked = blocked
-        log.nextAction = nextAction
-        log.question = question
+        log.content = content
 
         do {
             try await repository.updateLog(log)
         } catch {
             log.title = originalTitle
-            log.did = originalDid
-            log.learned = originalLearned
-            log.blocked = originalBlocked
-            log.nextAction = originalNextAction
-            log.question = originalQuestion
+            log.content = originalContent
             throw error
         }
     }
