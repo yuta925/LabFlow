@@ -53,8 +53,7 @@ struct ConsultationTicketListView: View {
         } else {
             List(viewModel.tickets) { ticket in
                 NavigationLink {
-                    Text("相談チケット詳細画面（#35で実装）")
-                        .navigationTitle(ticket.title)
+                    ConsultationTicketDetailView(ticket: ticket)
                 } label: {
                     ConsultationTicketRowView(ticket: ticket)
                 }
