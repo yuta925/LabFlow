@@ -28,7 +28,7 @@ struct ConsultationTicketListView: View {
             .sheet(isPresented: $isShowingCreate) {
                 Task { await viewModel?.loadTickets() }
             } content: {
-                Text("相談チケット作成画面（#34で実装）")
+                ConsultationTicketCreateView()
             }
         }
         .task {
