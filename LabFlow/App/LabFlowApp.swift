@@ -8,7 +8,14 @@ struct LabFlowApp: App {
         do {
             return try ModelContainer(for: schema)
         } catch {
-            fatalError("Could not create ModelContainer: \(error)")
+            // スキーマ変更時にストアとの不整合が発生した場合、既存ストアを削除して再作成する
+            let config = ModelConfiguration(schema: schema)
+            try? FileManager.default.removeItem(at: config.url)
+            do {
+                return try ModelContainer(for: schema)
+            } catch {
+                fatalError("Could not create ModelContainer: \(error)")
+            }
         }
     }()
 
