@@ -26,7 +26,7 @@ struct ConsultationTicketDetailView: View {
             }
         }
         .sheet(isPresented: $isShowingEdit) {
-            Text("相談チケット編集画面（#36で実装）")
+            ConsultationTicketEditView(ticket: ticket)
         }
         .alert("相談チケットを削除しますか？", isPresented: $isShowingDeleteAlert) {
             Button("削除", role: .destructive) {
