@@ -16,6 +16,9 @@ struct HomeDashboardView: View {
             }
             .navigationTitle("ホーム")
         }
+        .onAppear {
+            Task { await viewModel?.load() }
+        }
         .task {
             guard viewModel == nil else { return }
             let vm = HomeDashboardViewModel(
@@ -30,7 +33,7 @@ struct HomeDashboardView: View {
 
     @ViewBuilder
     private func content(viewModel: HomeDashboardViewModel) -> some View {
-        if viewModel.isLoading {
+        if viewModel.isLoading && viewModel.isEmpty {
             ProgressView()
         } else if viewModel.isEmpty {
             ContentUnavailableView(
@@ -81,9 +84,6 @@ struct HomeDashboardView: View {
                     }
                 }
                 .padding()
-            }
-            .onAppear {
-                Task { await viewModel.load() }
             }
         }
     }

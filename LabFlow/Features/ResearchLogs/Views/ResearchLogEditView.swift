@@ -7,6 +7,7 @@ struct ResearchLogEditView: View {
 
     let log: ResearchLog
     @State private var viewModel: ResearchLogEditViewModel?
+    @State private var editorController = MarkdownEditorController()
 
     var body: some View {
         NavigationStack {
@@ -75,7 +76,11 @@ struct ResearchLogEditView: View {
 
             Divider()
 
-            MarkdownTextEditor(text: $viewModel.content)
+            MarkdownFormattingToolbar(controller: editorController)
+
+            Divider()
+
+            MarkdownTextEditor(text: $viewModel.content, controller: editorController)
                 .padding(.horizontal, 16)
                 .padding(.top, 8)
         }
