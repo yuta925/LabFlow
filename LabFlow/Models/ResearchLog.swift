@@ -5,29 +5,17 @@ import SwiftData
 final class ResearchLog {
     @Attribute(.unique) var id: UUID
     var title: String
-    var did: String
-    var learned: String
-    var blocked: String
-    var nextAction: String
-    var question: String
+    var content: String
     var createdAt: Date
     var updatedAt: Date
 
     init(
         title: String,
-        did: String = "",
-        learned: String = "",
-        blocked: String = "",
-        nextAction: String = "",
-        question: String = ""
+        content: String = ""
     ) {
         self.id = UUID()
         self.title = title
-        self.did = did
-        self.learned = learned
-        self.blocked = blocked
-        self.nextAction = nextAction
-        self.question = question
+        self.content = content
         self.createdAt = Date()
         self.updatedAt = Date()
     }

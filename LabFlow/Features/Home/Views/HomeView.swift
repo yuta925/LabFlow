@@ -4,6 +4,9 @@ import SwiftData
 struct HomeView: View {
     var body: some View {
         TabView {
+            Tab("ホーム", systemImage: "house") {
+                HomeDashboardView()
+            }
             Tab("タスク", systemImage: "checklist") {
                 TaskListView()
             }
@@ -16,7 +19,6 @@ struct HomeView: View {
         }
     }
 }
-
 
 #Preview {
     HomeView()

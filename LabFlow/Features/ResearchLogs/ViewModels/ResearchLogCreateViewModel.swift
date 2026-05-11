@@ -4,11 +4,7 @@ import Foundation
 @MainActor
 final class ResearchLogCreateViewModel {
     var title = ""
-    var did = ""
-    var learned = ""
-    var blocked = ""
-    var nextAction = ""
-    var question = ""
+    var content = ""
     var isLoading = false
     var errorMessage: String?
 
@@ -27,11 +23,7 @@ final class ResearchLogCreateViewModel {
         defer { isLoading = false }
         let log = ResearchLog(
             title: title.trimmingCharacters(in: .whitespaces),
-            did: did,
-            learned: learned,
-            blocked: blocked,
-            nextAction: nextAction,
-            question: question
+            content: content
         )
         try await repository.createLog(log)
     }
